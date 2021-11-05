@@ -7,3 +7,5 @@ Manter estado no componente
 
 Hook: useEffect
 Executar algo na instanciação ou destruição do componente, observar estado
+
+netfily

@@ -2,6 +2,7 @@ import Footer from "components/Footer/Footer";
 import NavBar from "components/NavBar";
 import { Link } from "react-router-dom";
 
+// a funtion declarada assim da a entender que é uma var ou um object do js
 const Home = () => {
     return (
         < >

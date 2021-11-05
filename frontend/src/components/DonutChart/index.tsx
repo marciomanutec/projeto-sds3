@@ -41,7 +41,7 @@ const DonutChart = () => {
 
     const mockData = {
         series: [477138, 499928, 444867, 220426, 473088, 852088],
-        labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé', 'Cuda']
+        labels: ['Márcio Manutec', 'Gilmar Alves', 'Cuda Cat', 'Mônica Cota', 'Tipitica', 'Cuda']
     }
 
     const options = {
@@ -53,8 +53,8 @@ const DonutChart = () => {
         <Chart
             //   options={{ ...options, labels: mockData.labels }}
             //   series={mockData.series}
-            options={{ ...options, labels: chartData.labels }}
-            series={chartData.series}
+            options={{ ...options, labels: mockData.labels }}
+            series={mockData.series}
             type="donut"
             height="240"
         />
