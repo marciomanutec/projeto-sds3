@@ -13,7 +13,7 @@ type ChartData = {
 const DonutChart = () => {
 
     //Forma certa
-    const [chartData, setChartData] = useState<ChartData>({ labels: ['Cudinha'], series: [852088] });
+  //  const [chartData, setChartData] = useState<ChartData>({ labels: ['Cudinha'], series: [852088] });
 
     // Forma errada
     // let chartData: ChartData = { labels: ['Cudinha'], series: [85200.20] };
@@ -27,11 +27,11 @@ const DonutChart = () => {
             const datafornec = response.data as Fornecedores[];
             const myLabels = data.map(x => x.sellerName);
             const mySeries = data.map(x => x.sum);
-            const fornecNome = datafornec.map(f => f.fornecedor);
+           // const fornecNome = datafornec.map(f => f.fornecedor);
 
             //  chartData = { labels: ['Gilmar'], series: [100000] };
-            console.log(chartData.labels);
-            console.log(chartData.series);
+        //    console.log(chartData.labels);
+        //    console.log(chartData.series);
             //  setChartData({ labels: ['Gilmar'], series: [120000] })
 
             //  console.log(response.data)
