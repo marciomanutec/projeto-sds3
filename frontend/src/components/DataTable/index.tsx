@@ -1,8 +1,7 @@
 import axios from "axios";
 import Pagination from "components/Pagination/pagination";
 import { useEffect, useState } from "react";
-import { DadosTable, SaleSucess } from "types/sale";
-import { formatLocalDate } from "utils/format";
+import { DadosTable } from "types/sale";
 import { BASE_URL } from "utils/requests";
 
 const DataTable = () => {
@@ -30,7 +29,7 @@ const DataTable = () => {
     return (
 
         < >
-           <Pagination/>
+            <Pagination />
             <div className="table-responsive">
 
                 <table className="table table-striped table-sm">
