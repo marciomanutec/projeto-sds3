@@ -1,11 +1,28 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
+import { SaleSum } from 'types/sale';
+import { BASE_URL } from 'utils/requests';
+
+
+type ChartData = {
+    labels: string[];
+    series: number[];
+}
 
 const DonutChart = () => {
 
-    const mockData = {
-        series: [477138, 499928, 444867, 220426, 473088, 852088],
-        labels: ['Márcio Manutec', 'Gilmar Alves', 'Cuda Cat', 'Mônica Cota', 'Tipitica', 'Cuda']
-    }
+    const [chartData, setChartData] = useState<ChartData>({ labels: [], series: [] });
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}search/shows?q=star%20wars`)
+            .then(response => {
+                const data = response.data as SaleSum[];
+                const myLabels = data.map(x => x.show.name);
+                const mySeries = data.map(x => x.show.id);
+                setChartData({ labels: myLabels, series: mySeries });
+            });
+    }, []);
 
     const options = {
         legend: {
@@ -14,8 +31,8 @@ const DonutChart = () => {
     }
     return (
         <Chart
-            options={{ ...options, labels: mockData.labels }}
-            series={mockData.series}
+            options={{ ...options, labels: chartData.labels }}
+            series={chartData.series}
             type="donut"
             height="240"
         />
